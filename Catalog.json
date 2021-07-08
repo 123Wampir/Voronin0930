@@ -1,0 +1,63 @@
+{
+  "product": [
+    {
+      "name": "Стол",
+      "article": "QQ",
+      "price": 211212,
+      "manufacturer": "Олег",
+      "category": "1",
+      "weight": 100,
+      "count": 38,
+      "id": 1
+    },
+    {
+      "name": "Телефон сяоми",
+      "article": "бомж",
+      "price": 8700,
+      "manufacturer": "Сяоми",
+      "category": "4",
+      "weight": 0.5,
+      "count": 3,
+      "stepname": "",
+      "id": 2
+    },
+    {
+      "name": "Пиво",
+      "article": "Балтика",
+      "price": 30,
+      "manufacturer": "Балтика",
+      "category": "2",
+      "weight": 1,
+      "count": 1000,
+      "id": 4
+    },
+    {
+      "name": "dsds",
+      "article": "dsd",
+      "price": 2,
+      "manufacturer": null,
+      "category": "1",
+      "weight": 433,
+      "count": 43,
+      "id": 5
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Мебель"
+    },
+    {
+      "id": 2,
+      "name": "Техника"
+    },
+    {
+      "id": 3,
+      "name": "Книги"
+    },
+    {
+      "id": 4,
+      "name": "Телефоны"
+    }
+  ]
+}

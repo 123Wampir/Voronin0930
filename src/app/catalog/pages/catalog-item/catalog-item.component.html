@@ -1,0 +1,26 @@
+<div class="container">
+    <form [formGroup]="productForm">
+        <div class="personal-form-title">
+            <div>НОВЫЙ ТОВАР</div>
+        </div>
+        <div class="fullname">
+            <input type="text" class="input" formControlName="name" placeholder="Название"
+                [ngClass]="{error:this.productForm.get('name')?.invalid && this.productForm.get('name')?.touched}">
+            <input type="text" class="input" formControlName="article" placeholder="Артикль"
+                [ngClass]="{error:this.productForm.get('article')?.invalid && this.productForm.get('article')?.touched}">
+            <input type="number" class="input" formControlName="price" placeholder="Цена"
+                [ngClass]="{error:this.productForm.get('price')?.invalid && this.productForm.get('price')?.touched}">
+            <input type="text" class="input" formControlName="manufacturer" placeholder="Производитель">
+            <select name="category" class="category" formControlName="category"
+                [ngClass]="{error:this.productForm.get('category')?.invalid && this.productForm.get('category')?.touched}">
+                <option value="{{item.id}}" *ngFor="let item of CatalogService.categories">{{item.name}}</option>
+            </select>
+            <input type="number" class="input" formControlName="weight" placeholder="Вес"
+                [ngClass]="{error:this.productForm.get('weight')?.invalid && this.productForm.get('weight')?.touched}">
+            <input type="number" class="input" formControlName="count" placeholder="Количество на складе"
+                [ngClass]="{error:this.productForm.get('count')?.invalid && this.productForm.get('count')?.touched}">
+        </div>
+        <button class="save" (click)="onSave()" [disabled]="productForm.invalid">SAVE</button>
+        <button class="clear" (click)="clearData();">CLEAR</button>
+    </form>
+</div>

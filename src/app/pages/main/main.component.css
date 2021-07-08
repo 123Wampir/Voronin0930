@@ -1,0 +1,25 @@
+.container{
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    background-color: cadetblue;
+    box-shadow: rgb(69, 108, 109) 10px 5px 10px 5px;
+    margin: 20px;
+    border: darkcyan 10px solid;
+    color: white;
+    text-align: justify;
+}
+.main{
+    padding: 25px;
+    margin: 10px;
+}
+
+@media (max-width:800px) {
+    .container{
+        padding: 0;
+    }
+    .main{
+        padding: 5px;
+        margin: 10px;
+    }
+}

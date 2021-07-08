@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="new">
+        <button class="create" (click)="linkToItem()">ДОБАВИТЬ ТОВАР</button>
+    </div>
+    <div class="empty" *ngIf="CatalogService.products.length==0">ПУСТО</div>
+    <div class="sorting">
+        <select name="sorting" class="select-label" #sort (change)="sorting(sort.value)">
+            <option value="0">Цена по возрастанию</option>
+            <option value="1">Цена по убыванию</option>
+            <option value="2">Кол. на складе по возрастанию</option>
+            <option value="3">Кол. на складе по убыванию</option>
+        </select>
+    </div>
+    <table class="items" *ngIf="CatalogService.products.length!=0">
+        <tr>
+            <th class="name">НАЗВАНИЕ</th>
+            <th class="category"><select name="category" class="select-label" #category
+                    (change)="filter(category.value,'category')">
+                    <option value="{{item.id}}" *ngFor="let item of categories">{{item.name}}</option>
+                </select></th>
+            <th class="price">ЦЕНА</th>
+            <th class="weight">ВЕС</th>
+            <th class="count"><select name="counter" class="select-label" #counter
+                    (change)="filter(counter.value,'count')">
+                    <option value="{{item.id}}" *ngFor="let item of count">{{item.name}}</option>
+                </select></th>
+            <th class="action">УПРАВЛЕНИЕ</th>
+        </tr>
+        <tr class="item" *ngFor="let item of products">
+            <td class="name">{{item.name}}</td>
+            <td class="category">{{getCategoryLabel(item.category)}}</td>
+            <td class="price">{{item.price}}</td>
+            <td class="weight">{{item.weight}}</td>
+            <td class="count">
+                <div class="count-items">
+                    <button class="add" (click)="changeCount(item,true)">+</button>
+                    {{item.count}}
+                    <button class="remove" (click)="changeCount(item,false)" [disabled]="item.count==0">-</button>
+                </div>
+            </td>
+            <td class="action">
+                <div class="buttons">
+                    <button class="change" (click)="linkToItem(item.id)">ИЗМЕНИТЬ</button>
+                    <button class="delete" (click)="onProductDelete(item.id)">УДАЛИТЬ</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
